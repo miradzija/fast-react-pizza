@@ -49,29 +49,29 @@ function CreateOrder() {
   const cart = fakeCart;
 
   return (
-    <div>
-      <h2>Ready to order? Let's go!</h2>
+    <div className="py-6 px-4">
+      <h2 className="text-xl font-semibold mb-8">Ready to order? Let's go!</h2>
 
       {/* <Form method="POST" action="'order/new"> */}
       <Form method="POST">
-        <div>
-          <label>First Name</label>
+        <div className="mb-5 flex gap-2 flex-col sm:flex-row sm:items-center">
+          <label className="sm:basis-40">First Name</label>
           <input className="input" type="text" name="customer" required />
         </div>
 
-        <div>
-          <label>Phone number</label>
-          <div>
+        <div className="mb-5 flex gap-2 flex-col sm:flex-row sm:items-center">
+          <label className="sm:basis-40">Phone number</label>
+          <div className="grow">
             <input className="input" type="tel" name="phone" required />
+            {formErrors?.phone && (
+              <p style={{ color: "red" }}>{formErrors.phone}</p>
+            )}
           </div>
-          {formErrors?.phone && (
-            <p style={{ color: "red" }}>{formErrors.phone}</p>
-          )}
         </div>
 
-        <div>
-          <label>Address</label>
-          <div>
+        <div className="mb-5 flex gap-2 flex-col sm:flex-row sm:items-center">
+          <label className="sm:basis-40">Address</label>
+          <div className="grow">
             <input type="text" name="address" required className="input" />
           </div>
         </div>
